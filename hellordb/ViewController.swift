@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let string = input.text ?? ""
         let dic:[String:Any?] = ["text":string,
                                  "timestamp":ServerValue.timestamp()]
-        dbRef.child("test").setValue(dic)
+        dbRef.child("table").childByAutoId().setValue(dic)
     }
 
     @IBAction func theDelete(_ sender: Any) {
