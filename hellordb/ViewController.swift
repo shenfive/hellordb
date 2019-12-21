@@ -11,24 +11,24 @@ import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var input: UITextField!
+    @IBOutlet weak var pageTitle: UILabel!
     var dbRef:DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dbRef = Database.database().reference()
         print("=================")
-        Auth.auth().signInAnonymously { (result, error) in
-            if error == nil{
-                var appNameRef = self.dbRef.child("appdefult/name")
-                appNameRef.observeSingleEvent(of: .value) { (snapshot) in
-                    print(snapshot.value as! String)
-                }
-            }else{
-                print(error?.localizedDescription)
-            }
+        Auth.auth().signInAnonymously(completion: nil)
+        
+        var appNameRef = self.dbRef.child("appdefult/name")
+        appNameRef.observeSingleEvent(of: .value) { (snapshot) in
+            self.pageTitle.text = snapshot.value as? String
         }
     }
-
-
+    @IBAction func enter(_ sender: Any) {
+        let string = input.text ?? ""
+        dbRef.child("test").setValue(string)
+    }
 }
 
