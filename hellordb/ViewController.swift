@@ -21,11 +21,24 @@ class ViewController: UIViewController {
         print("=================")
         Auth.auth().signInAnonymously(completion: nil)
         
+
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         dbRef.child("appdefult/name").observe(.value) { (sanpshot) in
             self.pageTitle.text = sanpshot.value as? String
         }
-
     }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dbRef.child("appdefult/name").removeAllObservers()
+    }
+    
+    
     @IBAction func enter(_ sender: Any) {
         let string = input.text ?? ""
         let dic:[String:Any?] = ["text":string,
