@@ -21,10 +21,10 @@ class ViewController: UIViewController {
         print("=================")
         Auth.auth().signInAnonymously(completion: nil)
         
-        var appNameRef = self.dbRef.child("appdefult/name")
-        appNameRef.observeSingleEvent(of: .value) { (snapshot) in
-            self.pageTitle.text = snapshot.value as? String
+        dbRef.child("appdefult/name").observe(.value) { (sanpshot) in
+            self.pageTitle.text = sanpshot.value as? String
         }
+
     }
     @IBAction func enter(_ sender: Any) {
         let string = input.text ?? ""
