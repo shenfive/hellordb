@@ -28,7 +28,9 @@ class ViewController: UIViewController {
     }
     @IBAction func enter(_ sender: Any) {
         let string = input.text ?? ""
-        dbRef.child("test").setValue(string)
+        let dic:[String:Any] = ["name":"Danny","height":190]
+        let array = ["Tom","Jerry","Candy"]
+        dbRef.child("test").setValue(array)
     }
 }
 
