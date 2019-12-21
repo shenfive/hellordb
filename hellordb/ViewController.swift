@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    var dbRef:DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        dbRef = Database.database().reference()
+        var appNameRef = dbRef.child("appdefult/name")
+        appNameRef.observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot.value as! String)
+        }
     }
 
 
