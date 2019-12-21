@@ -28,9 +28,13 @@ class ViewController: UIViewController {
     }
     @IBAction func enter(_ sender: Any) {
         let string = input.text ?? ""
-        let dic:[String:Any] = ["name":"Danny","height":190]
-        let array = ["Tom","Jerry","Candy"]
-        dbRef.child("test").setValue(array)
+        let dic:[String:Any?] = ["text":string,
+                                 "timestamp":ServerValue.timestamp()]
+        dbRef.child("test").setValue(dic)
+    }
+
+    @IBAction func theDelete(_ sender: Any) {
+        dbRef.child("test").removeValue()
     }
 }
 

@@ -47,14 +47,30 @@
                                     <action selector="enter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdQ-hQ-5o5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBr-nd-Qyv">
+                                <rect key="frame" x="183" y="285" width="53" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="2Iu-sB-Cj3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="LLV-zO-BAE"/>
+                                    <constraint firstAttribute="height" constant="30" id="VO5-me-BFp"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="u3C-Qf-epG"/>
+                                </constraints>
+                                <state key="normal" title="刪除"/>
+                                <connections>
+                                    <action selector="theDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoZ-0Y-f8x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tUY-iH-7cG" firstAttribute="trailing" secondItem="UjW-Lo-aFC" secondAttribute="trailing" id="7df-ds-Jpu"/>
                             <constraint firstItem="KU6-pe-7XJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="EUw-di-kjD"/>
                             <constraint firstItem="UjW-Lo-aFC" firstAttribute="top" secondItem="KU6-pe-7XJ" secondAttribute="bottom" constant="162" id="Ems-Vv-50f"/>
+                            <constraint firstItem="dBr-nd-Qyv" firstAttribute="top" secondItem="tUY-iH-7cG" secondAttribute="bottom" constant="20" id="bv7-g1-3UY"/>
                             <constraint firstItem="tUY-iH-7cG" firstAttribute="top" secondItem="UjW-Lo-aFC" secondAttribute="bottom" constant="8" id="nN9-VX-gU3"/>
                             <constraint firstItem="KU6-pe-7XJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v2f-Nz-CZw"/>
+                            <constraint firstItem="dBr-nd-Qyv" firstAttribute="centerX" secondItem="tUY-iH-7cG" secondAttribute="centerX" id="vfZ-uO-ct2"/>
                             <constraint firstItem="UjW-Lo-aFC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wW7-jE-st2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
