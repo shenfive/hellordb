@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func theDelete(_ sender: Any) {
-        dbRef.child("test").removeValue()
+        dbRef.child("table").removeValue()
     }
 }
 
