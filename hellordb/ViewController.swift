@@ -16,9 +16,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dbRef = Database.database().reference()
-        var appNameRef = dbRef.child("appdefult/name")
-        appNameRef.observeSingleEvent(of: .value) { (snapshot) in
-            print(snapshot.value as! String)
+        print("=================")
+        Auth.auth().signInAnonymously { (result, error) in
+            if error == nil{
+                var appNameRef = self.dbRef.child("appdefult/name")
+                appNameRef.observeSingleEvent(of: .value) { (snapshot) in
+                    print(snapshot.value as! String)
+                }
+            }else{
+                print(error?.localizedDescription)
+            }
         }
     }
 
